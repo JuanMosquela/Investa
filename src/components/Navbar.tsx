@@ -1,9 +1,31 @@
+"use client";
+
 import React from "react";
 import Container from "./Container";
 import Logo from "./Logo";
 import { navlinks } from "@/constants";
 import Link from "next/link";
 import Button from "./Button";
+
+import Dropdown from "./Dropdown";
+
+const solutions = [
+  {
+    name: "Insights",
+    description: "Measure actions your users take",
+    href: "##",
+  },
+  {
+    name: "Automations",
+    description: "Create your own targeted content",
+    href: "##",
+  },
+  {
+    name: "Reports",
+    description: "Keep track of your growth",
+    href: "##",
+  },
+];
 
 const Navbar = () => {
   return (
@@ -26,7 +48,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="flex gap-3 items-center">
+          <div className="hidden lg:flex gap-6 items-center">
             <Button
               text="Get Advice"
               bgColor="bg-white"
@@ -38,6 +60,8 @@ const Navbar = () => {
               textColor="text-white"
             />
           </div>
+
+          <Dropdown />
         </Container>
       </nav>
     </header>
